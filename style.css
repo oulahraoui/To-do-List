@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap");
+
+:root {
+  font-size: 15px;
+  --body-bg: rgb(83, 83, 83);
+  --bg: rgb(255, 255, 255);
+  --text-color: rgb(0, 0, 0);
+  --green: #0da574;
+  --danger: #e51c23;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.stat-button {
+  position: static;
+  margin: 10px auto;
+  display: flex;
+  gap: 8px;
+}
+
+.live,
+.history {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.live:hover,
+.history:hover {
+  background-color: bisque;
+  cursor: pointer;
+}
+
+.container {
+  background-color: var(--bg);
+  width: 90vw;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.task-bar {
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  margin: 8px 0;
+}
+
+.add {
+  background-color: var(--green);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.add:hover {
+  background-color: hsla(161, 85%, 35%, 0.8);
+  cursor: pointer;
+}
+
+.search-section {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-section .task-bar {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.list-section {
+  margin: 20px;
+}
+
+.task-list li {
+  list-style: none;
+}
+
+.task-list li .edit {
+  margin-left: 8px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0da574;
+  padding: 8px 10px;
+  min-width: 56px;
+  font-size: 1rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 500;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 1.15rem;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.task-left {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+
+.task-left input {
+  display: none;
+}
+
+.costum-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: relative;
+}
+
+.task-left input:checked + .costum-checkbox::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#date {
+  font-size: 0.95rem;
+  position: static;
+}
+
+.delete {
+  border: none;
+  background-color: var(--danger) !important;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 500;
+}
+
+.task-list li button {
+  margin: 5px 0;
+}
+
+.delete:hover {
+  background-color: rgba(229, 28, 35, 0.8);
+  cursor: pointer;
+}
+
+.task-list li .edit:hover {
+  background-color: hsla(161, 85%, 35%, 0.8);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  :root {
+    font-size: 14px;
+  }
+  .heading {
+    font-size: 1.6rem;
+  }
+  .live,
+  .history {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+  .container {
+    padding: 18px;
+    width: 94vw;
+  }
+  .task-item {
+    font-size: 1rem;
+  }
+  .task-list li .edit,
+  .task-list li .delete {
+    padding: 6px 8px;
+    font-size: 0.95rem;
+  }
+  #date {
+    font-size: 0.85rem;
+  }
+}
+
+.error {
+  color: red;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 500;
+  margin-right: auto;
+  margin-bottom: -18px;
+  font-size: small;
+}
+
+.outline-error {
+  outline: 2px solid red;
+  border: red solid 1px;
+}
+
+.completed .task-name {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.hide {
+  display: none;
+}
+
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 13px;
+  }
+  body {
+    padding: 12px 0;
+  }
+  .heading {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .container {
+    padding: 12px;
+    width: 96vw;
+  }
+  .search-section {
+    gap: 6px;
+  }
+  .add {
+    padding: 8px 10px;
+    font-size: 1rem;
+  }
+  .task-bar {
+    padding: 10px;
+  }
+  .task-item {
+    gap: 8px;
+  }
+  .task-left {
+    flex-basis: 100%;
+    order: 1;
+  }
+  #date {
+    order: 2;
+    flex-basis: 100%;
+    margin-top: 6px;
+    color: #666;
+  }
+  .task-list li .edit {
+    order: 3;
+    margin-left: auto;
+  }
+  .task-list li .delete {
+    order: 4;
+  }
+  .task-list li button {
+    margin: 6px 6px 0 0;
+  }
+  .stat-button {
+    justify-content: center;
+  }
+  .task-left .task-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
