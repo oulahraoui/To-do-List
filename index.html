@@ -7,37 +7,45 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="stat-button" id="stateBtn">
-      <button class="live" id="live">Live list</button>
-      <button class="history" id="history">History list</button>
-    </div>
-    <main class="container">
-      <!-- Live Page start -->
-      <section class="to-do-list">
-        <div class="head-section">
-          <h1 class="heading">To do list</h1>
-        </div>
-        <div class="search-section">
-          <span class="error hide">You must add value!</span>
-          <input type="text" class="task-bar" id="task-bar" placeholder="Add task" />
-          <button class="add" id="addTask" type="button">Add task</button>
-        </div>
-        <div class="list-section">
-          <ul class="task-list" id="task-list">
-          </ul>
-        </div>
-      </section>
-      <!-- Live Page End -->
+    <nav class="navbar">
+      <h1 class="nav-heading">To Do List</h1>
+    </nav>
+    <main class="main">
+      <div class="stat-button" id="stateBtn">
+        <button class="live" id="live">Live list</button>
+        <button class="history" id="history">History list</button>
+      </div>
+      <main class="container">
+        <!-- Live Page start -->
+        <section class="to-do-list">
+          <div class="head-section">
+            <h1 class="heading">To do list</h1>
+          </div>
+          <div class="search-section">
+            <span class="error hide">You must add value!</span>
+            <input
+              type="text"
+              class="task-bar"
+              id="task-bar"
+              placeholder="Add task"
+            />
+            <button class="add" id="addTask" type="button">Add task</button>
+          </div>
+          <div class="list-section">
+            <ul class="task-list" id="task-list"></ul>
+          </div>
+        </section>
+        <!-- Live Page End -->
 
-      <!-- History Page -->
-      <section class="history-page hide">
-        <div class="list-section">
-          <h1 class="heading">History Page</h1>
-          <ul class="task-list">
-          </ul>
-        </div>
-      </section>
-      <!-- History page end -->
+        <!-- History Page -->
+        <section class="history-page hide">
+          <div class="list-section">
+            <h1 class="heading">History Page</h1>
+            <ul class="task-list"></ul>
+          </div>
+        </section>
+        <!-- History page end -->
+      </main>
     </main>
 
     <script src="script.js"></script>

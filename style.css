@@ -2,11 +2,12 @@
 
 :root {
   font-size: 15px;
-  --body-bg: rgb(83, 83, 83);
-  --bg: rgb(255, 255, 255);
+  --body-bg: #001f3e;
+  --bg: #073358;
   --text-color: rgb(0, 0, 0);
   --green: #0da574;
   --danger: #e51c23;
+  --nav:  #073358;
 }
 
 * {
@@ -17,12 +18,31 @@
 
 body {
   background-color: var(--body-bg);
+  margin: auto;
+  min-height: 100vh;
+}
+
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  margin-bottom: calc(10% + 1.5rem);
+  background-color: var(--nav);
+  font-family: "dm-sans", sans-serif;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-heading {
+  font-family: "dm-sans, sans-serif";
+  font-weight: 700;
+  font-size: 2.25rem;
+  padding: 10px 20px;
 }
 
 .stat-button {
@@ -45,7 +65,8 @@ body {
 
 .live:hover,
 .history:hover {
-  background-color: bisque;
+  opacity: 0.8;
+  /* background-color: ; */
   cursor: pointer;
 }
 
@@ -153,7 +174,7 @@ body {
 .costum-checkbox {
   width: 18px;
   height: 18px;
-  border: 2px solid #333;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   position: relative;
 }
@@ -162,7 +183,7 @@ body {
   content: "";
   width: 10px;
   height: 10px;
-  background: #333;
+  background: #ffffff;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -251,7 +272,6 @@ body {
   display: none;
 }
 
-
 @media (max-width: 600px) {
   :root {
     font-size: 13px;
@@ -309,4 +329,3 @@ body {
     white-space: nowrap;
   }
 }
-
